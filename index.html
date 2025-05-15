@@ -3,73 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AvioTech | Coming Soon</title>
+  <title>AvioTech | ICT & UAS Services</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      text-align: center;
-      padding: 40px;
+    :root {
+      --bg-light: #f4f4f4;
+      --bg-dark: #1a1a1a;
+      --text-light: #333;
+      --text-dark: #eee;
+      --primary: #007acc;
+      --primary-hover: #005fa3;
     }
 
-    img {
-      max-width: 300px;
-      margin-bottom: 30px;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: var(--bg-dark);
+        color: var(--text-dark);
+      }
+      input, textarea {
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #555;
+      }
+      button {
+        background-color: var(--primary);
+        color: #fff;
+      }
+      button:hover {
+        background-color: var(--primary-hover);
+      }
+    }
+
+    header {
+      background-color: transparent;
+      padding: 40px 20px 20px;
+    }
+
+    header img {
+      max-width: 240px;
+      height: auto;
+    }
+
+    section {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
     }
 
     h1 {
-      font-size: 2.2em;
+      font-size: 2em;
+      margin-bottom: 10px;
     }
 
     p {
+      line-height: 1.6;
       font-size: 1.1em;
-      margin-bottom: 30px;
     }
 
     form {
-      background-color: #fff;
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     input, textarea {
-      width: 100%;
-      padding: 12px;
+      width: 90%;
+      max-width: 400px;
+      padding: 10px;
       margin: 10px 0;
+      border-radius: 5px;
       border: 1px solid #ccc;
-      border-radius: 6px;
       font-size: 1em;
     }
 
     button {
-      background-color: #cc0000;
-      color: white;
+      background-color: var(--primary);
+      color: #fff;
       border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 5px;
       font-size: 1em;
+      cursor: pointer;
     }
 
     button:hover {
-      background-color: #a60000;
+      background-color: var(--primary-hover);
     }
 
-    .footer {
-      margin-top: 50px;
+    footer {
+      padding: 20px;
       font-size: 0.9em;
-      color: #888;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      input, textarea {
+        width: 95%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <img src="logo.png" alt="AvioTech Logo" />
-<h1>Technology, Innovation & Aerial Excellence</h1>
+  <header>
+    <img src="logo.png" alt="AvioTech Logo">
+  </header>
+
+  <section>
+    <h1>Technology, Innovation & Aerial Excellence</h1>
 <p>
   At <strong>Aviotech</strong>, we deliver innovative solutions at the intersection of technology and unmanned systems. 
   From trusted ICT support and consulting to advanced drone training, operations, and integration — our services are 
@@ -77,22 +133,32 @@
   or transforming your digital workflow, Aviotech is your partner in progress.
 </p>
 <p><em>Our full website is currently under development and will be launching soon.</em></p>
-<p><em>In the meantime, feel free to reach out using the contact form below — we’ll get back to you as soon as possible.</em></p>
+<p><em>In the meantime, feel free to use the contact form below — we’ll get back to you as soon as possible. Alternatively for new and existing clients you can use the
+	"Book Now" option on the right to shcedule a consultation with one of our agents.</em></p>
 
+    <h2>Get in Touch</h2>
+    
+    <form action="https://formspree.io/f/meogvveg" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="text" name="company" placeholder="Your Company (optional)">
+      <input type="text" name="contact" placeholder="Your Email or Phone" required>
+      <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-
-
-  <form action="https://formspree.io/f/meogvveg" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="text" name="company" placeholder="Company Name (optional)" />
-    <input type="text" name="contact" placeholder="Email or Phone" required />
-    <textarea name="message" placeholder="Message (optional)"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-
-  <div class="footer">
+  <footer>
     &copy; 2025 AvioTech. All rights reserved.
-  </div>
+  </footer>
+
+  <!-- Setmore Floating Book Now Button -->
+  <a style="position: fixed; right: -2px; top: 25%; display: block; z-index: 20000" 
+     target="_blank" 
+     href="https://aviotech.setmore.com">
+     <img border="none" 
+          src="https://storage.googleapis.com/full-assets/setmore/images/1.0/Calendar/Setmore-Book-Now.png" 
+          alt="Book an appointment with AvioTech using Setmore" />
+  </a>
 
 </body>
 </html>
